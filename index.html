@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfoFence Cybersecurity</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="header text-center">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <!-- Logo or Brand Name -->
+      <div class="text-2xl font-semibold"><span class="text-pink-500">Info</span>Fence</div>
+
+      <!-- Navigation Links -->
+      <div class="hamburger-menu" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#about-us">About Us</a>
+        <a href="#our-services">Our Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#location">Location</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner Section -->
+  <section class="relative overflow-hidden">
+    <div class="banner-images">
+      <img src="/images/cyber-security.webp" alt="Cybersecurity">
+      <img src="/images/ciso.webp" alt="vCISO Services">
+      <img src="images/cloud-adoption.webp" alt="Cloud Adoption">
+      <div class="banner-text">Welcome to InfoFence - Your Cybersecurity Solution</div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about-us" class="py-12  text-center section">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-semibold mb-8">About Us</h2>
+      <p class="text-lg">InfoFence is dedicated to providing top-notch cybersecurity solutions to protect your business from evolving digital threats. Our team of experts offers a comprehensive range of services to help organizations safeguard their data, infrastructure, and operations.</p>
+    </div>
+  </section>
+
+  <!-- Our Services Section -->
+  <section id="our-services" class="py-12 text-center section">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-semibold mb-8 text-sky-400">Our Services</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class=" p-6 rounded-lg shadow-lg">
+          <img src="/images/sections/Cloud-Security-Statistics-723x1024.webp" alt="Cybersecurity" class="w-full h-48 object-cover rounded-t-lg">
+          <h3 class="text-2xl font-bold mt-4">Cybersecurity</h3>
+          <p>Protect your organization from cyber threats with our comprehensive cybersecurity solutions.</p>
+        </div>
+        <div class="p-6 rounded-lg shadow-lg">
+          <img src="/images/sections/vciso.jpg" alt="vCISO Services" class="w-full h-48 object-cover rounded-t-lg">
+          <h3 class="text-2xl font-bold mt-4">vCISO Services</h3>
+          <p>Leverage the expertise of a Virtual Chief Information Security Officer to safeguard your organization.</p>
+        </div>
+        <div class=" p-6 rounded-lg shadow-lg">
+          <img src="/images/sections/adoption.jpg" alt="Cloud Adoption" class="w-full h-48 object-cover rounded-t-lg">
+          <h3 class="text-2xl font-bold mt-4">Cloud Adoption</h3>
+          <p>Transform your business with secure and efficient cloud adoption strategies.</p>
+        </div>
+        <div class="p-6 rounded-lg shadow-lg">
+          <img src="/images/sections/archtec.jpg" alt="Security Architecture" class="w-full h-48 object-cover rounded-t-lg">
+          <h3 class="text-2xl font-bold mt-4">Security Architecture</h3>
+          <p>Design a robust security architecture to protect your digital assets and infrastructure.</p>
+        </div>
+        <div class=" p-6 rounded-lg shadow-lg">
+          <img src="/images/sections/consultant.png" alt="Third-Party Risk Management" class="w-full h-48 object-cover rounded-t-lg">
+          <h3 class="text-2xl font-bold mt-4">Third-Party Risk Management</h3>
+          <p>Minimize risks by ensuring secure collaborations with third-party vendors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Contact Section -->
+<section id="contact" class="py-12 w-96 m-auto text-center section">
+    <div class="max-w-3xl mx-auto"> <!-- Reduced width here -->
+      <h2 class="text-4xl font-semibold mb-8">Contact Us</h2>
+      <form action="#" method="POST" class="space-y-6 font-semibold">
+        <div>
+          <label for="name" class="block text-left text-sky-500">Full Name</label>
+          <input type="text" id="name" name="name" class="w-full p-3  rounded-lg" required>
+        </div>
+
+        <div>
+            <label for="name" class="block text-left text-sky-500">PhoneNumber</label>
+            <input type="text" id="name" name="name" class="w-full p-3  rounded-lg" required>
+          </div>
+
+        <div>
+          <label for="email" class="block text-left text-sky-500">Email</label>
+          <input type="email" id="email" name="email" class="w-full p-3   rounded-lg" required>
+        </div>
+        <div>
+          <label for="message" class="block text-left text-sky-500">Message</label>
+          <textarea placeholder="write any of your query here" id="message" name="message" rows="4" class="w-full p-3  rounded-lg" required></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 bg-blue-600 text-white rounded-lg">Submit</button>
+      </form>
+    </div>
+  </section>
+  
+
+  <!-- Location Section -->
+  <section id="location" class="py-12  text-center section">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-semibold mb-8">You Can Find Us at the Location Below</h2>
+      <div class="w-full sm:w-2/3 h-64 mx-auto">
+        <!-- Replace with your Google Maps iframe link -->
+        <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <p class="mt-6 text-lg">Visit us at: InfoFence Cyber Security , Kampala, Uganda</p>
+    </div>
+
+    <a href="#" class="border rounded  border-none bg-sky-500 text-white font-bold p-1">Go Up</a>
+    
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    <p>&copy; 2025 InfoFence. All Rights Reserved.</p>
+    <div class="mt-4">
+      <a href="mailto:care@infofence.cloud" class="text-yellow-500">Email Us</a> | 
+      <a href="#" class="text-yellow-500">Privacy Policy</a> |
+      <a href="#" class="text-yellow-500">Terms & Conditions</a>
+    </div>
+    <div class="mt-4 flex justify-center space-x-6">
+      <a href="#" class="text-yellow-500 ">Facebook</a>
+      <a href="#" class="text-yellow-500">Twitter</a>
+      <a href="#" class="text-yellow-500">LinkedIn</a>
+    </div>
+   
+  </footer>
+
+  
+
+  <!-- JavaScript to Toggle Mobile Menu -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('open');
+      document.querySelector('.hamburger-menu').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
