@@ -7,6 +7,294 @@
   <link rel="stylesheet" href="output.css">
   <link rel="stylesheet" href="./styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    
+
+/* Smooth Scroll */
+
+/* Banner Images Animation */
+.banner-images {
+  width: 100%;
+  height: 64vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire banner without distortion */
+  position: absolute;
+  opacity: 0.3;
+  animation: slideImage 21s infinite;
+}
+
+.banner-images img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.banner-images img:nth-child(2) {
+  animation-delay: 7s;
+}
+
+.banner-images img:nth-child(3) {
+  animation-delay: 14s;
+}
+
+@keyframes slideImage {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  30% { opacity: 1; }
+  35% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Centered Text in Banner */
+/* Banner Text Animation */
+.banner-texts {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-70%, -50%);
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+  padding: 0 10px;
+}
+
+.banner-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  opacity: 0;
+  transform: scale(0.8); /* Start with smaller text */
+  position: absolute;
+  animation: slideText 21s infinite ease-in-out;
+}
+
+.banner-text:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.banner-text:nth-child(2) {
+  animation-delay: 7s;
+}
+
+.banner-text:nth-child(3) {
+  animation-delay: 14s;
+}
+
+
+@keyframes slideText {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px); /* Slightly smaller and moved down */
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1) translateY(0); /* Fade in and grow to normal size */
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1) translateY(0); /* Stay in full view */
+  }
+  40% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-20px); /* Fade out and shrink */
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-20px); /* Keep hidden for the rest of the cycle */
+  }
+}
+  
+@keyframes slideText {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  30% { opacity: 1; }
+  35% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+
+@keyframes fadeInText {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Section Animations */
+.section {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s forwards;
+}
+
+.section:nth-child(odd) {
+  animation-delay: 0.3s;
+}
+
+.section:nth-child(even) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Charcoal Background */
+body{
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #1f1e1e;
+}
+
+html,body{
+  overflow-x: hidden;
+}
+
+
+/* Header Styling */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #222;
+  padding: 16px 0;
+  z-index: 10;
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+.header a:hover {
+  color: yellow;
+}
+
+/* Mobile Hamburger Menu */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger-menu div {
+  width: 30px;
+  height: 4px;
+  margin: 5px;
+  background-color: white;
+  transition: transform 0.3s;
+}
+
+.nav-links {
+  display: flex;
+}
+
+@media screen and (max-width: 480px){
+  .banner-text{
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner-text{
+    font-size: 1.8rem;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    padding: 20px 0;
+    animation: slideDown 0.5s ease;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a:hover {
+    background-color: #444;
+  }
+
+  .hamburger-menu.open div:nth-child(1) {
+    transform: rotate(45deg) translateY(9px);
+  }
+
+  .hamburger-menu.open div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.open div:nth-child(3) {
+    transform: rotate(-45deg) translateY(-9px);
+  }
+
+  
+
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Footer Styling */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: yellow;
+}
+
+footer a:hover {
+  color: white;
+}
+
+footer .social-links a {
+  margin-right: 15px;
+  color: yellow;
+}
+
+footer .social-links a:hover {
+  color: white;
+}
+
+
+  </style>
 </head>
 <body>
 
@@ -38,76 +326,89 @@
       <img src="./cyber-security.webp" alt="Cybersecurity">
       <img src="./ciso.webp" alt="vCISO Services">
       <img src="./cloud-adoption.webp" alt="Cloud Adoption">
+    </div>
+    <div class="banner-texts">
       <div class="banner-text">Welcome to InfoFence - Your Cybersecurity Solution</div>
+      <div class="banner-text">Empowering Businesses with vCISO Services</div>
+      <div class="banner-text">Adopt Secure Cloud Solutions with InfoFence</div>
     </div>
   </section>
+  
 
   <!-- About Us Section -->
-  <section id="about-us" class="py-12  text-center section">
+  <section id="about-us" class="py-12 text-center section border rounded m-2">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl font-semibold mb-8">About Us</h2>
-      <p class="text-lg">InfoFence is dedicated to providing top-notch cybersecurity solutions to protect your business from evolving digital threats. Our team of experts offers a comprehensive range of services to help organizations safeguard their data, infrastructure, and operations.</p>
+      <h2 class="text-2xl font-semibold mb-5">About Us</h2>
+      <p class="text-sm text-green-500 ">InfoFence is dedicated to providing top-notch cybersecurity solutions to protect your business from evolving digital threats. Our team of experts offers a comprehensive range of services to help organizations safeguard their data, infrastructure, and operations.</p>
     </div>
   </section>
 
   <!-- Our Services Section -->
-  <section id="our-services" class="py-12 text-center section">
+  <section id="our-services" class="py-12 text-center section ">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl font-semibold mb-8 text-sky-400">Our Services</h2>
+      <h2 class="text-2xl font-semibold mb-8 text-sky-400">Our Services</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         <div class=" p-6 rounded-lg shadow-lg">
           <img src="./Cloud-Security-Statistics-723x1024.webp" alt="Cybersecurity" class="w-full h-48 object-cover rounded-t-lg">
-          <h3 class="text-2xl font-bold mt-4">Cybersecurity</h3>
+          <h3 class="text-2xl font-bold mt-4 text-green-500 ">Cybersecurity</h3>
           <p>Protect your organization from cyber threats with our comprehensive cybersecurity solutions.</p>
         </div>
         <div class="p-6 rounded-lg shadow-lg">
           <img src="./vciso.jpg" alt="vCISO Services" class="w-full h-48 object-cover rounded-t-lg">
-          <h3 class="text-2xl font-bold mt-4">vCISO Services</h3>
+          <h3 class="text-2xl font-bold mt-4 text-green-500 ">vCISO Services</h3>
           <p>Leverage the expertise of a Virtual Chief Information Security Officer to safeguard your organization.</p>
         </div>
         <div class=" p-6 rounded-lg shadow-lg">
           <img src="./adoption.jpg" alt="Cloud Adoption" class="w-full h-48 object-cover rounded-t-lg">
-          <h3 class="text-2xl font-bold mt-4">Cloud Adoption</h3>
+          <h3 class="text-2xl font-bold mt-4 text-green-500 ">Cloud Adoption</h3>
           <p>Transform your business with secure and efficient cloud adoption strategies.</p>
         </div>
         <div class="p-6 rounded-lg shadow-lg">
           <img src="./archtec.jpg" alt="Security Architecture" class="w-full h-48 object-cover rounded-t-lg">
-          <h3 class="text-2xl font-bold mt-4">Security Architecture</h3>
+          <h3 class="text-2xl font-bold mt-4 text-green-500 ">Security Architecture</h3>
           <p>Design a robust security architecture to protect your digital assets and infrastructure.</p>
         </div>
         <div class=" p-6 rounded-lg shadow-lg">
           <img src="./consultant.png" alt="Third-Party Risk Management" class="w-full h-48 object-cover rounded-t-lg">
-          <h3 class="text-2xl font-bold mt-4">Third-Party Risk Management</h3>
+          <h3 class="text-2xl font-bold mt-4 text-green-500 ">Third-Party Risk Management</h3>
           <p>Minimize risks by ensuring secure collaborations with third-party vendors.</p>
+        </div>
+
+        <div class=" p-6 rounded-lg shadow-lg">
+          <img src="./identity-access.webp" alt="Third-Party Risk Management" class="w-full h-48 object-cover rounded-t-lg">
+          <h3 class="text-2xl font-bold mt-4 text-green-500 ">Identity Access Management (IAM)</h3>
+          <p>Secure and streamline access to your systems with our robust IAM solutions. 
+            We help you manage user identities, enforce access controls, and ensure only 
+            authorized personnel access critical resources, enhancing security and compliance.</p>
         </div>
       </div>
     </div>
   </section>
 
  <!-- Contact Section -->
-<section id="contact" class="py-12 w-96 m-auto text-center section">
+<section id="contact" class="py-12 w-8/12 m-auto text-center section">
     <div class="max-w-3xl mx-auto"> <!-- Reduced width here -->
-      <h2 class="text-4xl font-semibold mb-8">Contact Us</h2>
-      <form action="#" method="POST" class="space-y-6 font-semibold">
+      <h2 class="text-2xl font-semibold mb-8">Contact Us</h2>
+      <form onsubmit="formSubmition(this)" method="POST" class="space-y-6 font-semibold">
         <div>
-          <label for="name" class="block text-left text-sky-500">Full Name</label>
-          <input type="text" id="name" name="name" class="w-full p-3  rounded-lg" required>
+          <label for="name" class="block  text-left text-sky-500">Full Name</label>
+          <input type="text" id="name" name="name" class="text-sky-500 focus:outline-none ring-1 focus:ring-purple-400 w-full p-3  rounded-lg" required>
         </div>
 
         <div>
             <label for="name" class="block text-left text-sky-500">PhoneNumber</label>
-            <input type="text" id="name" name="name" class="w-full p-3  rounded-lg" required>
+            <input type="text" id="name" name="name" class="text-sky-500 focus:outline-none ring-1 focus:ring-purple-400 w-full p-3  rounded-lg" required>
           </div>
 
         <div>
           <label for="email" class="block text-left text-sky-500">Email</label>
-          <input type="email" id="email" name="email" class="w-full p-3   rounded-lg" required>
+          <input type="email" id="email" name="email" class="text-sky-500 focus:outline-none ring-1 focus:ring-purple-400 w-full p-3   rounded-lg" required>
         </div>
         <div>
           <label for="message" class="block text-left text-sky-500">Message</label>
-          <textarea placeholder="write any of your query here" id="message" name="message" rows="4" class="w-full p-3  rounded-lg" required></textarea>
+          <textarea placeholder="write any of your query here" id="message" name="message" rows="4" class="text-gray-600 focus:outline-none ring-1 focus:ring-purple-400 w-full p-3  rounded-lg" required></textarea>
         </div>
-        <button type="submit" class="w-full py-3 bg-blue-600 text-white rounded-lg">Submit</button>
+        <button type="submit" class="w-28 py-3 bg-blue-600 text-white rounded-lg">Submit</button>
       </form>
     </div>
   </section>
@@ -148,6 +449,11 @@
 
   <!-- JavaScript to Toggle Mobile Menu -->
   <script>
+    function formSubmition(e){
+      
+      alert('your information is submitted. we shall get back to you soon')
+      e.preventDefault()
+    }
     function toggleMenu() {
       document.querySelector('.nav-links').classList.toggle('open');
       document.querySelector('.hamburger-menu').classList.toggle('open');
